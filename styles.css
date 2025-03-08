@@ -23,8 +23,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 0px;
-    background:   #e4dddd;
+    padding: 50px 20px;
+    background: #e4dddd;
     color: rgb(0, 0, 0);
 }
 
@@ -36,6 +36,7 @@ header {
     gap: 40px;
 }
 
+/* Text Section */
 .about-text {
     flex: 1;
 }
@@ -50,6 +51,7 @@ header {
     line-height: 1.6;
 }
 
+/* Image Section */
 .about-image {
     flex: 1;
     display: flex;
@@ -65,22 +67,45 @@ header {
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
 }
 
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .about-text h2 {
+        font-size: 24px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }
+
+    .about-image img {
+        width: 200px;
+        height: 230px;
+    }
+}
+
+
 /* Sticky Navbar */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background:  #161616; /* White background */
-    color: rgb(252, 252, 252);
+    background: #161616; /* Dark background */
+    color: white;
     padding: 15px 0;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
 /* Navigation List */
 .navbar ul {
-    list-style: none;
+    list-style: none; /* Remove bullet points */
     margin: 0;
     padding: 0;
     display: flex;
@@ -96,7 +121,7 @@ header {
 /* Navigation Links */
 .navbar ul li a {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: white;
     font-weight: bold;
     font-size: 18px;
     padding: 10px 15px;
@@ -105,9 +130,53 @@ header {
 
 /* Hover Effect */
 .navbar ul li a:hover {
-    color: #ff6600; /* Highlight color */
+    color: #ff6600;
     transform: scale(1.1);
 }
+
+/* Mobile Menu */
+@media screen and (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #161616;
+        overflow-y: auto;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .navbar ul li {
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    .navbar ul li a {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        font-size: 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        color: white;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+}
+
 
 /* Push content down so it doesn't hide behind navbar */
 body {
@@ -155,10 +224,10 @@ h2::after {
 }
 
 .skill-card {
-    width: 140px;
+    width: 250px;
     text-align: center;
     padding: 20px;
-    background: #222; /* Slightly lighter than section background */
+    background: #252323; /* Slightly lighter than section background */
     border-radius: 15px;
     box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease-in-out, background 0.3s;
@@ -194,7 +263,7 @@ h2::after {
 }
 
 .project-card {
-    background: linear-gradient(145deg, #1a1a1a, #292929); /* Slightly lighter than skills */
+    background-color: #252323; /* Slightly lighter than skills */
     width: 200px;
     padding: 25px;
     border-radius: 15px;
